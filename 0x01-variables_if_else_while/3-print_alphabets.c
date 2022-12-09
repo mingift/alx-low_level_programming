@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * main - prints alpha in lower and upper case
- * Reutun: Always 0
+ * main - Entry point
+ * Return: Always 0
  */
 int main(void)
 {
