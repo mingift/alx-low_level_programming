@@ -1,23 +1,29 @@
-#include "lists.h"
-#include <stdio.h>
+#include "main.h"
 
 /**
- * print_listint - prints all the elements of a listint_t list.
+ * binary_to_uint -converts a binary number to an unsigned int.
+ * @b: pointing to a string of 0 and 1 chars
  *
- * @h: head of linklist node
- *
- * Return: the number of nodes
- *
+ * Return:converted number, or 0
  */
-size_t print_listint(const listint_t *h)
+unsigned int binary_to_uint(const char *b)
 {
-	size_t count = 0;
+	int i;
+	unsigned int j;
 
-	while (h != NULL)
+	j = 0;
+	if (!b)
+		return (0);
+	for (i = 0; b[i] != '\0'; i++)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
-		count++;
+		if (b[i] != '0' && b[i] != '1')
+			return (0);
 	}
-	return (count);
+	for (i = 0; b[i] != '\0'; i++)
+	{
+		j <<= 1;
+		if (b[i] == '1')
+			j += 1;
+	}
+	return (j);
 }
